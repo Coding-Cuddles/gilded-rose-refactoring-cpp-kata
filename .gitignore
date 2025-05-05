@@ -1,2 +1,5 @@
+build
+cmake-build-*
+.cache
 .ccls-cache
 compile_commands.json
