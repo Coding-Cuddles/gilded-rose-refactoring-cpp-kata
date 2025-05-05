@@ -1,31 +1,24 @@
-all: format-check test
+all: build test
 
-export CXX := clang++
-export GTEST_COLOR := 1
-
-BUILDDIR ?= /tmp/build
-SRCS := $(shell find . -name '*.cpp' -or -name '*.h')
+BUILDDIR ?= build
+SRCS := $(shell git ls-files *.cpp *.h)
 
 .PHONY: build
 build:
-	cmake -B ${BUILDDIR} -G Ninja .
+	cmake -B ${BUILDDIR} .
 	cmake --build ${BUILDDIR}
 
-.PHONY: run
-run: build
-	cd ${BUILDDIR} && ./main
-
 .PHONY: test
-test: build
+test:
 	ctest --output-on-failure --test-dir ${BUILDDIR}
 
 .PHONY: format
 format:
-	@clang-format -i -style=file $(SRCS)
+	clang-format -i -style=file $(SRCS)
 
 .PHONY: format-check
 format-check:
-	@clang-format -style=file --dry-run -Werror $(SRCS) \
+	clang-format -style=file --dry-run -Werror $(SRCS) \
 		|| (echo "Some files require formatting. Run 'make format' to fix." && exit 1)
 
 .PHONY: clean
