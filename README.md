@@ -1,4 +1,4 @@
-# Gilded Rose Refactoring C++ Kata
+# Gilded Rose refactoring kata in C++
 
 [![CI](https://github.com/Coding-Cuddles/gilded-rose-refactoring-cpp-kata/actions/workflows/main.yml/badge.svg)](https://github.com/Coding-Cuddles/gilded-rose-refactoring-cpp-kata/actions/workflows/main.yml)
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://en.cppreference.com/w/cpp/17)
@@ -118,6 +118,26 @@ If a command reports a missing compiler or CMake, install that prerequisite
 and run the setup commands again.
 
 Setup is complete when CTest reports `100% tests passed`.
+
+## Work on the kata
+
+Refactor `gilded_rose.h`. The existing behavior is covered by
+`test_gilded_rose.cpp`.
+
+Run the tests after each change. Use Make when it is installed:
+
+```console
+make test
+```
+
+Otherwise, use CMake and CTest directly:
+
+```console
+cmake --build build --config Debug
+ctest --test-dir build --build-config Debug --output-on-failure
+```
+
+Continue when CTest reports `100% tests passed`.
 
 ## Make command reference
 
