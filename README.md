@@ -36,9 +36,9 @@ In addition to standard items, we have a few special item types:
 - **Aged Brie**: The item "Aged Brie" increases in quality the older it gets.
 - **Sulfuras**: The item "Sulfuras" is a legendary item that never has to be
   sold, and its quality is always 80.
-- **Backstage passes**. The item "Backstage passes to ..." increases in quality
-  faster as its sell-in value approaches: by 2 when there are ten days or less
-  and by 3 when there are five days or less, but drops to 0 after the concert.
+- **Backstage passes**: The item "Backstage passes to ..." increases in quality
+  faster as its sell-in value approaches: by 2 when there are ten days or fewer
+  and by 3 when there are five days or fewer, but drops to 0 after the concert.
 - **Conjured**: The item "Conjured" degrades in quality twice as fast as
   standard items.
 
